@@ -30,6 +30,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // routes
+app.use("/", (req, res) => {
+  res.send("Hello");
+})
 app.use("/register", registerRouter);
 app.use("/login", loginRouter);
 app.use('/personal-detail', personalRouter);
